@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Manakamana Ratna Ambika Secondary School</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .bg-hero {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Shree-Manakamana-Ratna-Ambika-Secondary-School.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="text-white bg-gray-900 font-sans">
+
+  <!-- Hero Section -->
+  <section class="bg-hero h-screen flex items-center justify-center bg-fixed bg-cover bg-center relative">
+    <div class="bg-black bg-opacity-70 w-full h-full absolute"></div>
+    <div class="z-10 text-center px-4">
+      <h1 class="text-5xl font-extrabold text-yellow-400 drop-shadow-lg">Shree Manakamana Ratna Ambika Secondary School</h1>
+      <p class="text-xl mt-4 text-gray-200">Empowering Education for a Brighter Tomorrow</p>
+      <a href="#login" class="mt-6 inline-block bg-yellow-400 text-black font-bold py-2 px-6 rounded hover:bg-yellow-300 transition">Access Portal</a>
+    </div>
+  </section>
+
+  <!-- Login Section -->
+  <section id="login" class="p-10 bg-gradient-to-br from-gray-800 to-gray-900 min-h-screen">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Student & Staff Login</h2>
+    <div class="max-w-md mx-auto bg-white p-8 rounded shadow-xl text-black">
+      <input id="username" type="text" placeholder="Username" class="w-full p-3 mb-3 border border-gray-300 rounded" />
+      <input id="password" type="password" placeholder="Password" class="w-full p-3 mb-4 border border-gray-300 rounded" />
+      <button onclick="login()" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold p-3 rounded">Login</button>
+      <p id="login-msg" class="mt-4 text-center text-red-500 font-semibold"></p>
+    </div>
+  </section>
+
+  <!-- Hidden School Info Section -->
+  <section id="school-info" class="hidden p-10 bg-gray-900 text-gray-100 space-y-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-yellow-400 text-center">Welcome to Shree M.R.A. School Portal</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Shree-Manakamana-Ratna-Ambika-Secondary-School.jpg" class="rounded-lg shadow-lg mb-6" alt="School Campus">
+      <p><strong>📍 Location:</strong> Khandbari-9, Tumlingtar, Sankhuwasabha</p>
+      <p><strong>👥 Students:</strong> 1700+ enrolled</p>
+      <p><strong>📘 Courses:</strong> Civil Engineering, Computer, Management & General Education</p>
+      <p><strong>🏫 Facilities:</strong> Labs, Library, ICT Rooms, Playground, Canteen, Hostel</p>
+      <p><strong>🎓 Your Class:</strong> Grade 9 - Civil</p>
+      <p><strong>🌟 Mission:</strong> Quality technical and academic education for rural development</p>
+      <p><strong>🔒 Note:</strong> Some features may require premium login access. Contact administration.</p>
+    </div>
+  </section>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("login-msg");
+      const info = document.getElementById("school-info");
+
+      if (user === "Krish" && pass === "7324") {
+        msg.textContent = "Login successful.";
+        msg.className = "text-green-500 text-center font-semibold";
+        info.classList.remove("hidden");
+        document.getElementById("login").classList.add("hidden");
+      } else {
+        msg.textContent = "Access Denied. Please contact school admin for portal license.";
+      }
+    }
+  </script>
+
+</body>
+</html>
